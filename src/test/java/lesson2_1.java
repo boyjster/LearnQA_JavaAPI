@@ -3,7 +3,7 @@ import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
-public class lesson2 {
+public class lesson2_1 {
     @Test
     public void testPunktOne(){
 
