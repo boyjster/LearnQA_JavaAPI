@@ -1,14 +1,8 @@
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.apache.http.client.protocol.ResponseContentEncoding;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-public class lesson2_2 {
+public class testLesson22 {
     @Test
     public void testPunktTwo() {
 
