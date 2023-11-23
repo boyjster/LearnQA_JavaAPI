@@ -15,8 +15,8 @@ public class testLesson32 {
         Response response = RestAssured
                 .post("https://playground.learnqa.ru/api/homework_cookie")
                 .andReturn();
-        Map<String, String> cookies = response.getCookies();
         //System.out.println(response.getCookies());
+        Map<String, String> cookies = response.getCookies();
         assertTrue(cookies.containsKey(name), "Response doesn`t have cookie with name " + name);
         assertEquals("hw_value",cookies.get(name), "Cookie value is not equals to 'hw_value'");
     }
