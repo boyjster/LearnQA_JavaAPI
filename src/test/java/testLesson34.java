@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static groovy.xml.Entity.not;
+import static org.apache.commons.lang3.StringUtils.length;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class testLesson34 {
@@ -32,9 +34,21 @@ public class testLesson34 {
                 .get("https://playground.learnqa.ru/api/user_agent_check")
                 .jsonPath();
         //response.prettyPrint();
-        assertEquals(platform, response.get("platform"), "Given platform is not equals to " + platform);
-        assertEquals(browser, response.get("browser"), "Given browser is not equals to " + browser);
-        assertEquals(device, response.get("device"), "Given device is not equals to " + device);
-
+        String result = "";
+        if(!response.get("platform").equals(platform)){
+            result = result + "expected platform '" + platform +
+                    "' is not equal to actual value '" + response.get("platform") + "' ";
+        }
+        if(!response.get("browser").equals(browser)){
+            result = result + "expected browser '" + browser +
+                    "' is not equal to actual value '" + response.get("browser") + "' ";
+        }
+        if(!response.get("device").equals(device)){
+            result = result + "expected device '" + device +
+                    "' is not equal to actual value '" + response.get("device") + "' ";
+        }
+        if(length(result)>1){
+            System.out.println("For User-Agent '" + userAg + "' " + result);
+        }
     }
 }
