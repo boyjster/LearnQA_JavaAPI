@@ -28,7 +28,6 @@ public class UserRegisterTest extends BaseTestCase {
         userData.put("email", email);
         userData = DataGenerator.getRegistrationData(userData);
 
-        //System.out.println("from method testCreateUserWithExistingEmail: " + userData);
         Response responseGetAuth = apiCoreRequests
                 .makePostRequest("https://playground.learnqa.ru/api/user/", userData);
 
@@ -42,8 +41,6 @@ public class UserRegisterTest extends BaseTestCase {
     public void testCreateUserSuccessfully(){
         String email = DataGenerator.getRandomEmail();
         Map<String, String> userData = DataGenerator.getRegistrationData();
-
-        //System.out.println("from method testCreateUserSuccessfully: " + userData);
 
         Response responseCreateAuth = apiCoreRequests
                 .makePostRequest("https://playground.learnqa.ru/api/user/", userData);
