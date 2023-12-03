@@ -48,4 +48,13 @@ public class ApiCoreRequests {
                 .post(url)
                 .andReturn();
     }
+
+    @Step("Make a GET-request")
+    public Response makeGetRequest(String url, Map<String, String> authData){
+        return given()
+                .filter(new AllureRestAssured())
+                .body(authData)
+                .get(url)
+                .andReturn();
+    }
 }

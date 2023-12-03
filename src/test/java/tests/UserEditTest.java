@@ -18,7 +18,7 @@ public class UserEditTest extends BaseTestCase {
         //GENERATE USER
         Map<String, String> userData = DataGenerator.getRegistrationData();
 
-        //System.out.println(userData);
+        System.out.println("from method testEditJustCreatedUser" + userData);
         JsonPath responseCreateAuth = RestAssured
                 .given()
                 .body(userData)
