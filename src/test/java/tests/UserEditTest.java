@@ -38,7 +38,6 @@ public class UserEditTest extends BaseTestCase {
                 .body(authData)
                 .post("https://playground.learnqa.ru/api/user/login")
                 .andReturn();
-        //System.out.println("server answer: " + responseGetAuth.asString());
 
         //EDIT
         String newName = "Changed Name";
