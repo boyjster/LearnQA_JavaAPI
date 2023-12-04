@@ -31,6 +31,8 @@ public class UserGetTest extends BaseTestCase {
     }
 
     @Test
+    @Description("This test returns all user data")
+    @DisplayName("Test get info of logged in user")
     public void testGetUserDetailsAuthAsSameUser(){
         Map<String, String> authData = new HashMap<>();
         authData.put("email", "vinkotov@example.com");
