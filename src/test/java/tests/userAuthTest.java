@@ -1,9 +1,6 @@
 package tests;
 
-import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import lib.BaseTestCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -50,7 +47,7 @@ public class userAuthTest extends BaseTestCase {
                         this.header,
                         this.cookie
                         );
-        Assertions.asserJsonByName(responseCheckAuth, "user_id", this.userIdOnAuth);
+        Assertions.assertJsonByName(responseCheckAuth, "user_id", this.userIdOnAuth);
     }
 
     @ParameterizedTest
@@ -61,13 +58,13 @@ public class userAuthTest extends BaseTestCase {
                     "https://playground.learnqa.ru/api/user/auth",
                     this.cookie
             );
-            Assertions.asserJsonByName(responseForCheck, "user_id", 0);
+            Assertions.assertJsonByName(responseForCheck, "user_id", 0);
         }else if(condition.equals("headers")){
             Response responseForCheck = apiCoreRequests.makeGetRequestWithToken(
                     "https://playground.learnqa.ru/api/user/auth",
                     this.header
             );
-            Assertions.asserJsonByName(responseForCheck, "user_id", 0);
+            Assertions.assertJsonByName(responseForCheck, "user_id", 0);
         }else {
             throw new IllegalArgumentException("Condition value is not known: " + condition);
         }
